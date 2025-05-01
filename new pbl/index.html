@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KivaX</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-1">
+            <a href="#" class="logo"><i class="fas fa-book"></i></fa-book>&nbsp;KivaX</a>
+
+            <label for="bookName" class="bookText">Enter Book Name:</label>
+            <input type="text" id="bookName" placeholder="Search">
+            <button onclick="searchImg()" class="searchbtn">Search</button>
+
+
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="#" class="fas fa-heart">
+                    <h6></h6>
+                </a>
+                <a href="#" class="fas fa-shopping-cart">
+                    <h6> </h6>
+                </a>
+                <div id="login-btn" class="fas fa-user">
+                    <h6></h6>
+                </div>
+                <div id="registration-btn" class="fas fa-sign-in-alt">
+                    <h6></h6>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="imgContainer"></div>
+
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="http://127.0.0.1:5500/?#">Home</a>
+                <a href="#featured">Featured</a>
+                <a href="#arrivals">Arrivals</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#blogs">Blogs</a>
+            </nav>
+        </div>
+    </header>
+    <nav class="bottom-navbar">
+        <a href="http://127.0.0.1:5500/?#" class="fas fa-home"></a>
+        <a href="#featured" class="fas fa-list"></a>
+        <a href="#arrivals" class="fas fa-tags"></a>
+        <a href="#reviews" class="fas fa-comments"></a>
+        <a href="#blogs" class="fas fa-blogs"></a>
+    </nav>
+
+    <div class="login-form-container">
+        <div id="close-login-btn" class="fas fa-times"></div>
+        <form method="POST" action="login.php">
+            <h3>sign in</h3>
+            <span>Username</span>
+            <input type="text" name="username" class="box" placeholder="enter your username" id="">
+            <span>password</span>
+            <input type="password" name="password" class="box" placeholder="enter your password" id="">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="remeber-me">
+                <label for="remeber-me">remeber me</label>
+            </div>
+            <input type="submit" value="Sign in" class="btn">
+            <p>forgot password?<a href="http://127.0.0.1:5500/forgotpassword.html">click here</a></p>
+            <p>don't have an account ?<a href="http://127.0.0.1:5500/index.html?#home">create one</a></p>
+        </form>
+    </div>
+
+    <div class="registration-form-container">
+        <div id="close-registration-btn" class="fas fa-times"></div>
+        <form method="POST" action="registration.php">
+            <h3>Register</h3>
+            <span>Username</span>
+            <input type="text" name="username" class="box" placeholder="enter your username" id="">
+            <span>Email</span>
+            <input type="email" name="email" class="box" placeholder="enter your email" id="">
+            <span>password</span>
+            <input type="password" name="password" class="box" placeholder="enter your password" id="">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="remeber-me">
+                <label for="remeber-me">remeber me</label>
+            </div>
+            <input type="submit" value="Register" class="btn">
+            <p>already have an account?<a href="http://127.0.0.1:5500/index.html?#home">Sign in</a></p>
+        </form>
+    </div>
+
+
+
+    <br>
+
+    <div class="carousel" data-flickity='{"wrapAround": true, 
+    "autoPlay": 5000,
+    "dragThreshold": 10,
+    "freeScroll": true,
+    "contain": true,
+    "cellAlign": "center",
+    "friction": 1.0 }'>
+        <div class="carousel-cell">
+            <h2 id="subhead">&nbsp;&nbsp;&nbsp;upto 60% off</h2>
+            <p>Mega Diwali offer , books 60% off</p>
+            <a href="#" class="btn">shop now</a>
+
+
+        </div>
+        <div class="carousel-cell">
+            <h2 id="subhead">&nbsp;&nbsp;&nbsp;Best seller</h2>
+            <p>Mega Diwali offer , books 60% off</p>
+            <a href="#" class="btn">shop now</a>
+        </div>
+        <div class="carousel-cell">
+            <h2 id="subhead">&nbsp;&nbsp;&nbsp;Stationary</h2>
+            <p>Mega Diwali offer , books 60% off</p>
+            <a href="#" class="btn">shop now</a>
+        </div>
+        <div class="carousel-cell">
+            <h2 id="subhead">&nbsp;&nbsp;&nbsp;Refrence Books</h2>
+            <p>Mega Diwali offer , books 60% off</p>
+            <a href="#" class="btn">shop now</a>
+        </div>
+        <div class="carousel-cell">
+            <h2 id="subhead">&nbsp;&nbsp;&nbsp;Most Loved</h2>
+            <p>Mega Diwali offer , books 60% off</p>
+            <a href="#" class="btn">shop now</a>
+        </div>
+    </div>
+
+
+
+
+
+    <section class="home" id="home">
+        <h1>Best Seller</h1>
+        <br>
+        <div class="books-slider" data-flickity='{
+            "wrapAround": true, 
+    "autoPlay": 3000,
+    "dragThreshold": 10,
+    "freeScroll": true,
+    "contain": true,
+    "cellAlign": "center",
+    "friction": 0.2
+          }'>
+            <div class="cell">
+                <img src="images/Civil Engineering.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+            <div class="cell">
+                <img src="images/Basic Computer Engineering.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Engineering physics.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/G.K..jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/History.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Zoology.webp" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Business.webp" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Psychology.webp" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+
+            <div class="cell">
+                <img src="images/Financial Management.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Deathnote.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Data Structure.jpeg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Indian Polity.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Radiology.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+
+            <div class="cell">
+                <img src="images/Mathematics.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+            <div class="cell">
+                <img src="images/Engineering physics.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+            <div class="cell">
+
+                <img src="images/Mechanical Engineering.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+            <div class="cell">
+
+                <img src="images/cd.jpg" width="200px" height="300px" alt="Deathnote">
+
+            </div>
+            <div class="cell">
+                <img src="images/Theory Of Machines.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+            <div class="cell">
+
+                <img src="images/Biochemistry.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+            <div class="cell">
+                <img src="images/C Programming.jpg" width="200px" height="300px" alt="Deathnote">
+            </div>
+            <img src="https://cdn.pixabay.com/photo/2016/01/06/21/42/light-bulbs-1125016_1280.jpg" width="200px"
+                height="300px" class="stand" alt="">
+        </div>
+        <br>
+        <h1>Most Loved</h1>
+        <div class="availabel-books" data-flickity='{"wrapAround": true }'>
+
+            <div class="cell">
+                <a href=""><img width="200px" height="300px"
+                        src=" https://images-na.ssl-images-amazon.com/images/I/41+e3refnZL.SX379_BO1,204,203,200.jpg"
+                        alt=""></a>
+
+                <a href="#" class="btn1">add to card</a>
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="cell">
+                <a href=""><img width="200px" height="300px" src="images/ml.jpg" alt=""></a>
+                <br>
+                <a href="#" class="btn1">add to card</a>
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="cell">
+                <a href=""><img width="200px" height="300px" src="images/oops.jpg" alt=""></a>
+                <br>
+                <a href="#" class="btn1">add to card</a>
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="cell">
+                <a href=""><img width="200px" height="300px" src="images/dsa.jpg" alt=""></a>
+                <br>
+                <a href="#" class="btn1">add to card</a>
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="cell">
+                <a href=""><img width="200px" height="300px" src="https://rb.gy/inlp5e" alt=""></a>
+                <br>
+                <a href="#" class="btn1">add to card</a>
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="cell">
+                <a href=""><img width="200px" height="300px"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45W1ry5T2VtfNZZGkeuwNT8oT_hA0Ermnk7W2q3udQjb6VVNtlnC4g7ApWL534gzQHy4&usqp=CAU"
+                        alt=""></a>
+                <br>
+                <a href="#" class="btn1">add to card</a>
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="cell">
+                <a href=""><img width="200px" height="300px"
+                        src="https://th.bing.com/th/id/OIP.Or4Aq6DvpbageK1FSSvCEgHaKp?pid=ImgDet&rs=1" alt=""></a>
+                <br>
+                <a href="#" class="btn1">add to card</a>
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="cell">
+                <a href=""><img width="200px" height="300px" src="images/computernetworks.jpg" alt=""></a>
+                <br>
+                <a href="#" class="btn1">add to card</a>
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <img scr="https://cdn.pixabay.com/photo/2016/01/06/21/42/light-bulbs-1125016_1280.jpg" class="stand" alt="">
+        </div>
+        </div>
+    </section>
+    <!-- home ends here -->
+    <!-- Featured starts here -->
+    <section class="featured" id="featured">
+        <h1 class="heading"><span>Featured books</span></h1>
+        <div class="featured-slider">
+            <div class="wrapper">
+
+                <!-- 1st-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px" src="https://rb.gy/8v8cuy" alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.200/-<span>Rs.500/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px" src="https://rb.gy/1jp0xr" alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--3rd-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px" src="http://surl.li/oahly" alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4th-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px" src="http://surl.li/oahmd" alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- wrapper ends here -->
+            <!-- wrapper start here -->
+            <div class="wrapper">
+
+                <!-- 1st-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px" src="http://surl.li/oahmx" alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.200/-<span>Rs.500/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px" src="http://surl.li/oahni" alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--3rd-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px" src="http://surl.li/oahno" alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4th-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45W1ry5T2VtfNZZGkeuwNT8oT_hA0Ermnk7W2q3udQjb6VVNtlnC4g7ApWL534gzQHy4&usqp=CAU"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- wrapper ends here -->
+            <!-- wrapper start here -->
+            <div class="wrapper">
+
+                <!-- 1st-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://th.bing.com/th/id/R.7fc9cdb086d6ca9437f5c0f3d08e0224?rik=7j7zZpR8bBJ%2fxg&riu=http%3a%2f%2fd28hgpri8am2if.cloudfront.net%2fbook_images%2fonix%2fcvr9781421539645%2fdeath-note-black-edition-vol-1-9781421539645_hr.jpg&ehk=qG191s2YnIN0FYrKUhqXYqjAOYoT276hC91pSdUGo6o%3d&risl=&pid=ImgRaw&r=0"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.200/-<span>Rs.500/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45W1ry5T2VtfNZZGkeuwNT8oT_hA0Ermnk7W2q3udQjb6VVNtlnC4g7ApWL534gzQHy4&usqp=CAU"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--3rd-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45W1ry5T2VtfNZZGkeuwNT8oT_hA0Ermnk7W2q3udQjb6VVNtlnC4g7ApWL534gzQHy4&usqp=CAU"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4th-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45W1ry5T2VtfNZZGkeuwNT8oT_hA0Ermnk7W2q3udQjb6VVNtlnC4g7ApWL534gzQHy4&usqp=CAU"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- wrapper ends here -->
+            <!-- wrapper start here -->
+            <div class="wrapper">
+
+                <!-- 1st-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://th.bing.com/th/id/R.7fc9cdb086d6ca9437f5c0f3d08e0224?rik=7j7zZpR8bBJ%2fxg&riu=http%3a%2f%2fd28hgpri8am2if.cloudfront.net%2fbook_images%2fonix%2fcvr9781421539645%2fdeath-note-black-edition-vol-1-9781421539645_hr.jpg&ehk=qG191s2YnIN0FYrKUhqXYqjAOYoT276hC91pSdUGo6o%3d&risl=&pid=ImgRaw&r=0"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.200/-<span>Rs.500/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45W1ry5T2VtfNZZGkeuwNT8oT_hA0Ermnk7W2q3udQjb6VVNtlnC4g7ApWL534gzQHy4&usqp=CAU"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--3rd-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45W1ry5T2VtfNZZGkeuwNT8oT_hA0Ermnk7W2q3udQjb6VVNtlnC4g7ApWL534gzQHy4&usqp=CAU"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4th-->
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img width="200px" height="300px"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ45W1ry5T2VtfNZZGkeuwNT8oT_hA0Ermnk7W2q3udQjb6VVNtlnC4g7ApWL534gzQHy4&usqp=CAU"
+                            alt="">
+                        <div class="content">
+                            <h3>Featured Books</h3>
+                            <div class="price">Rs.249/-<span>Rs.900/-</span></div>
+                            <a href="#" class="btn">add to cart</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- wrapper ends here -->
+
+            <!--                 Every wrapper box have contains 4 box div. box div is a dialog box contain book image , rate and other operation   -->
+        </div>
+    </section>
+    <!-- Featured ends here -->
+    <!--custom js file link-->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+
+
+
+
+    <link rel="stylesheet" href="auther/">
+</body>
+
+</html>
